@@ -17,7 +17,7 @@ RUN rm -rf nanopb/tests
 FROM i386/ubuntu:18.04 as generator
 RUN apt-get update && apt-get install -y \
     git-core \
-    && rm -rf /var/lib/apt/lists/*```
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY --from=builder /opt/nanopb /opt/nanopb
 ENV PATH="/opt/nanopb/generator-bin:${PATH}"
